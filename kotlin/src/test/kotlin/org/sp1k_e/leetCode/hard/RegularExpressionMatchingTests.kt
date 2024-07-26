@@ -8,11 +8,20 @@ class RegularExpressionMatchingTests {
     fun test() {
         val testCases = arrayOf(
             TestCase(false, "a", "aa"),
+            TestCase(false, "mississippi", "mis* is * p *. "),
+            TestCase(false, "c", "a*"),
+            TestCase(true, "ab", ".*b"),
             TestCase(true, "a", "a"),
             TestCase(true, "aa", "a**"),
             TestCase(true, "aa", "a*"),
             TestCase(true, "", "a*"),
             TestCase(true, "aa", ".*"),
+            TestCase(true, "a", ".*"),
+            TestCase(true, "aab", "c*a*b"),
+            TestCase(true, "abc", "a***abc"),
+            TestCase(true, "aaa", "ab*ac*a"),
+            TestCase(true, "c", ".*a*"),
+            TestCase(true, "aabcbcbcaccbcaabc", ".*a*aa*.*b*.c*.*a*"),
         )
         val testObject = RegularExpressionMatching()
         for (testCase in testCases) {

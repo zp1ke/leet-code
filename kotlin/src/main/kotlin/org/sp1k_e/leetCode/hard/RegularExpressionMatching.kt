@@ -24,9 +24,14 @@ class RegularExpressionMatching {
         val firstMatch = s.first() == p.first() || p.first() == '.'
 
         if (p.length > 1 && p[1] == '*') {
-            return hasMatch(s, p.substring(2)) || (firstMatch && hasMatch(s.substring(1), p))
+            var match = hasMatch(s, p.substring(2))
+            if (!match && firstMatch) {
+                match = hasMatch(s.substring(1), p) || hasMatch(s.substring(1), p.substring(2))
+            }
+            return match
         }
 
-        return firstMatch && hasMatch(s.substring(1), p.substring(1))
+        val match = firstMatch && hasMatch(s.substring(1), p.substring(1))
+        return match
     }
 }
