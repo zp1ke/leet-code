@@ -22,6 +22,7 @@ class RegularExpressionMatchingTests {
             TestCase(true, "aaa", "ab*ac*a"),
             TestCase(true, "c", ".*a*"),
             TestCase(true, "aabcbcbcaccbcaabc", ".*a*aa*.*b*.c*.*a*"),
+            TestCase(true, "abcaaaaaaabaabcabac", ".*ab.a.*a*a*.*b*b*"),
         )
         val testObject = RegularExpressionMatching()
         for (testCase in testCases) {
