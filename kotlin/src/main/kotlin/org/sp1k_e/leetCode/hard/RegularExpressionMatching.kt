@@ -17,21 +17,13 @@ class RegularExpressionMatching {
             return s.isEmpty()
         }
 
-        if (s.isEmpty()) {
-            return p.isEmpty() || (p.length <= 2 && p.last() == '*')
-        }
-
-        val firstMatch = s.first() == p.first() || p.first() == '.'
+        val firstMatch = s.isNotEmpty() && (s.first() == p.first() || p.first() == '.')
 
         if (p.length > 1 && p[1] == '*') {
-            var match = hasMatch(s, p.substring(2))
-            if (!match && firstMatch) {
-                match = hasMatch(s.substring(1), p) || hasMatch(s.substring(1), p.substring(2))
-            }
-            return match
+            return hasMatch(s, p.substring(2)) ||
+                    (firstMatch && hasMatch(s.substring(1), p))
         }
 
-        val match = firstMatch && hasMatch(s.substring(1), p.substring(1))
-        return match
+        return firstMatch && hasMatch(s.substring(1), p.substring(1))
     }
 }
