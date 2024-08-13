@@ -7,22 +7,22 @@ class RegularExpressionMatchingTests {
     @Test
     fun test() {
         val testCases = arrayOf(
-            TestCase(false, "a", "aa"),
-            TestCase(false, "mississippi", "mis* is * p *. "),
-            TestCase(false, "c", "a*"),
-            TestCase(true, "ab", ".*b"),
-            TestCase(true, "a", "a"),
-            TestCase(true, "aa", "a**"),
-            TestCase(true, "aa", "a*"),
-            TestCase(true, "", "a*"),
-            TestCase(true, "aa", ".*"),
-            TestCase(true, "a", ".*"),
-            TestCase(true, "aab", "c*a*b"),
-            TestCase(true, "abc", "a***abc"),
-            TestCase(true, "aaa", "ab*ac*a"),
-            TestCase(true, "c", ".*a*"),
-            TestCase(true, "aabcbcbcaccbcaabc", ".*a*aa*.*b*.c*.*a*"),
-            TestCase(true, "abcaaaaaaabaabcabac", ".*ab.a.*a*a*.*b*b*"),
+            RegularExpressionMatchingTestCase(false, "a", "aa"),
+            RegularExpressionMatchingTestCase(false, "mississippi", "mis* is * p *. "),
+            RegularExpressionMatchingTestCase(false, "c", "a*"),
+            RegularExpressionMatchingTestCase(true, "ab", ".*b"),
+            RegularExpressionMatchingTestCase(true, "a", "a"),
+            RegularExpressionMatchingTestCase(true, "aa", "a**"),
+            RegularExpressionMatchingTestCase(true, "aa", "a*"),
+            RegularExpressionMatchingTestCase(true, "", "a*"),
+            RegularExpressionMatchingTestCase(true, "aa", ".*"),
+            RegularExpressionMatchingTestCase(true, "a", ".*"),
+            RegularExpressionMatchingTestCase(true, "aab", "c*a*b"),
+            RegularExpressionMatchingTestCase(true, "abc", "a***abc"),
+            RegularExpressionMatchingTestCase(true, "aaa", "ab*ac*a"),
+            RegularExpressionMatchingTestCase(true, "c", ".*a*"),
+            RegularExpressionMatchingTestCase(true, "aabcbcbcaccbcaabc", ".*a*aa*.*b*.c*.*a*"),
+            RegularExpressionMatchingTestCase(true, "abcaaaaaaabaabcabac", ".*ab.a.*a*a*.*b*b*"),
         )
         val testObject = RegularExpressionMatching()
         for (testCase in testCases) {
@@ -32,7 +32,7 @@ class RegularExpressionMatchingTests {
     }
 }
 
-private data class TestCase(val expected: Boolean, val inputS: String, val inputP: String) {
+private data class RegularExpressionMatchingTestCase(val expected: Boolean, val inputS: String, val inputP: String) {
     fun errorWith(result: Boolean): String {
         return "s = <$inputS>, p = <$inputP>, expected = $expected, result = $result"
     }

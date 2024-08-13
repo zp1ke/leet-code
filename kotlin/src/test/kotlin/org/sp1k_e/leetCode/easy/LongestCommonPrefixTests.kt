@@ -7,10 +7,10 @@ class LongestCommonPrefixTests {
     @Test
     fun test() {
         val testCases = arrayOf(
-            TestCase("fl", arrayOf("flower", "flow", "flight")),
-            TestCase("", arrayOf("dog", "racecar", "car")),
-            TestCase("a", arrayOf("ab", "a")),
-            TestCase("", arrayOf("")),
+            LongestCommonPrefixTestCase("fl", arrayOf("flower", "flow", "flight")),
+            LongestCommonPrefixTestCase("", arrayOf("dog", "racecar", "car")),
+            LongestCommonPrefixTestCase("a", arrayOf("ab", "a")),
+            LongestCommonPrefixTestCase("", arrayOf("")),
         )
         val testObject = LongestCommonPrefix()
         for (testCase in testCases) {
@@ -20,4 +20,4 @@ class LongestCommonPrefixTests {
     }
 }
 
-private data class TestCase(val expected: String, val input: Array<String>)
+private data class LongestCommonPrefixTestCase(val expected: String, val input: Array<String>)

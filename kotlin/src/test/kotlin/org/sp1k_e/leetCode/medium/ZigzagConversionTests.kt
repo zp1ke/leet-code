@@ -7,12 +7,12 @@ class ZigzagConversionTests {
     @Test
     fun test() {
         val testCases = arrayOf(
-            TestCase("PAHNAPLSIIGYIR", "PAYPALISHIRING", 3),
-            TestCase("A", "A", 1),
-            TestCase("AB", "AB", 1),
-            TestCase("ACEBD", "ABCDE", 2),
-            TestCase("PINALSIGYAHRPI", "PAYPALISHIRING", 4),
-            TestCase("AIQBHJPRXCGKOSWDFLNTVEMU",
+            ZigzagConversionTestCase("PAHNAPLSIIGYIR", "PAYPALISHIRING", 3),
+            ZigzagConversionTestCase("A", "A", 1),
+            ZigzagConversionTestCase("AB", "AB", 1),
+            ZigzagConversionTestCase("ACEBD", "ABCDE", 2),
+            ZigzagConversionTestCase("PINALSIGYAHRPI", "PAYPALISHIRING", 4),
+            ZigzagConversionTestCase("AIQBHJPRXCGKOSWDFLNTVEMU",
                 ('A'..'X').map { it.toString() }.reduce { acc, s -> acc + s }, 5),
         )
         val testObject = ZigzagConversion()
@@ -23,4 +23,4 @@ class ZigzagConversionTests {
     }
 }
 
-private data class TestCase(val expected: String, val input: String, val numberOfRows: Int)
+private data class ZigzagConversionTestCase(val expected: String, val input: String, val numberOfRows: Int)
