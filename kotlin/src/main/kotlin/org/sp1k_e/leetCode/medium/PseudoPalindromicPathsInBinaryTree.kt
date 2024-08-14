@@ -3,10 +3,7 @@ package org.sp1k_e.leetCode.medium
 // https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/description/
 class PseudoPalindromicPathsInBinaryTree {
     fun pseudoPalindromicPaths(root: TreeNode?): Int {
-        if (root == null) {
-            return 0
-        }
-        return paths(root)
+        return if (root != null) paths(root) else 0
     }
 
     private fun paths(root: TreeNode, odds: Set<Int> = emptySet()): Int {
@@ -29,13 +26,15 @@ class TreeNode(var `val`: Int) {
 
     companion object {
         fun create(index: Int, array: Array<Int?>): TreeNode? {
-            if (index > array.lastIndex || array[index] == null) {
-                return null
+            if (index < array.size && array[index] != null) {
+                val node = TreeNode(`val` = array[index]!!)
+                node.left = create(2 * index + 1, array)
+                node.right = create(2 * index + 2, array)
+                return node
             }
-            val node = TreeNode(`val` = array[index]!!)
-            node.left = create(2 * index + 1, array)
-            node.right = create(2 * index + 2, array)
-            return node
+            return null
         }
     }
+
+    override fun toString(): String = "TreeNode(`val`=$`val`, left=${left?.`val`}, right=${right?.`val`})"
 }
