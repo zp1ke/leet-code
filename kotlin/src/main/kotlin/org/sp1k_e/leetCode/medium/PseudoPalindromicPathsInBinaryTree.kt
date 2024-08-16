@@ -3,20 +3,24 @@ package org.sp1k_e.leetCode.medium
 // https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/description/
 class PseudoPalindromicPathsInBinaryTree {
     fun pseudoPalindromicPaths(root: TreeNode?): Int {
-        return if (root != null) paths(root) else 0
+        return paths(root)
     }
 
-    private fun paths(root: TreeNode, odds: Set<Int> = emptySet()): Int {
-        val oddsList = odds.toMutableSet()
-        if (!oddsList.add(root.`val`)) {
-            oddsList.remove(root.`val`)
+    private fun paths(node: TreeNode?, odds: Set<Int> = emptySet()): Int {
+        if (node == null) {
+            return 0
         }
-        if (root.left == null && root.right == null) {
-            return if (oddsList.size <= 1) 1 else 0
+
+        val oddsSet = odds.toMutableSet()
+        if (!oddsSet.add(node.`val`)) {
+            oddsSet.remove(node.`val`)
         }
-        val leftPaths = if (root.left != null) paths(root.left!!, oddsList) else 0
-        val rightPaths = if (root.right != null) paths(root.right!!, oddsList) else 0
-        return leftPaths + rightPaths
+
+        if (node.left == null && node.right == null) {
+            return if (oddsSet.size < 2) 1 else 0
+        }
+
+        return paths(node.left, oddsSet) + paths(node.right, oddsSet)
     }
 }
 
