@@ -1,5 +1,6 @@
 package org.sp1k_e.leetCode.medium
 
+import org.sp1k_e.leetCode.model.asTreeNode
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -14,18 +15,10 @@ class PseudoPalindromicPathsInBinaryTreeTests {
         )
         val testObject = PseudoPalindromicPathsInBinaryTree()
         for (testCase in testCases) {
-            val result = testObject.pseudoPalindromicPaths(testCase.treeNode)
+            val result = testObject.pseudoPalindromicPaths(testCase.input.asTreeNode)
             assertEquals(testCase.expected, result)
         }
     }
 }
 
-private data class PseudoPalindromicPathsInBinaryTreeTestCase(val expected: Int, val input: Array<Int?>) {
-    val treeNode: TreeNode?
-        get() {
-            if (input.isEmpty()) {
-                return null
-            }
-            return TreeNode.create(0, input)
-        }
-}
+private data class PseudoPalindromicPathsInBinaryTreeTestCase(val expected: Int, val input: Array<Int?>)
