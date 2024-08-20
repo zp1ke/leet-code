@@ -10,7 +10,7 @@ class BinaryTreePreorderTraversalTests {
         val testCases = arrayOf(
             BinaryTreePreorderTraversalTestCase(emptyList(), emptyArray()),
             BinaryTreePreorderTraversalTestCase(listOf(1), arrayOf(1)),
-            BinaryTreePreorderTraversalTestCase(listOf(1, 2, 3), arrayOf(1, null, 2, null, null, 3)),
+            BinaryTreePreorderTraversalTestCase(listOf(1, 2, 3), arrayOf(1, null, 2, 3)),
             BinaryTreePreorderTraversalTestCase(listOf(1, 2, 4, 5, 3, 6, 7), arrayOf(1, 2, 3, 4, 5, 6, 7)),
         )
         val testObject = BinaryTreePreorderTraversal()

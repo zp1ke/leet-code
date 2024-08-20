@@ -4,25 +4,35 @@ class TreeNode(var `val`: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null
 
-    companion object {
-        fun create(index: Int, array: Array<Int?>): TreeNode? {
-            if (index < array.size && array[index] != null) {
-                val node = TreeNode(`val` = array[index]!!)
-                node.left = create(2 * index + 1, array)
-                node.right = create(2 * index + 2, array)
-                return node
-            }
-            return null
-        }
-    }
-
     override fun toString(): String = "TreeNode(`val`=$`val`, left=${left?.`val`}, right=${right?.`val`})"
 }
 
 val Array<Int?>.asTreeNode: TreeNode?
+    // https://dev.to/sibprogrammer/build-binary-tree-from-array-1f5o#approach-2
     get() {
-        if (isEmpty()) {
+        if (isEmpty() || first() == null) {
             return null
         }
-        return TreeNode.create(0, this)
+
+        val list = toMutableList()
+        val root = TreeNode(`val` = list.removeFirst()!!)
+        val queue = mutableListOf(root)
+
+        while (list.isNotEmpty()) {
+            val node = queue.removeFirst()
+
+            val left = if (list.isNotEmpty()) list.removeFirst() else null
+            if (left != null) {
+                node.left = TreeNode(`val` = left)
+                queue.add(node.left!!)
+            }
+
+            val right = if (list.isNotEmpty()) list.removeFirst() else null
+            if (right != null) {
+                node.right = TreeNode(`val` = right)
+                queue.add(node.right!!)
+            }
+        }
+
+        return root
     }
