@@ -1,7 +1,7 @@
 package org.sp1k_e.leetCode.easy
 
 import kotlin.test.Test
-import kotlin.test.assertEquals
+import kotlin.test.assertContentEquals
 
 class CountingBitsTests {
     @Test
@@ -13,7 +13,7 @@ class CountingBitsTests {
         val testObject = CountingBits()
         for (testCase in testCases) {
             val result = testObject.countBits(testCase.input)
-            assertEquals(testCase.expected, result)
+            assertContentEquals(testCase.expected, result)
         }
     }
 }
