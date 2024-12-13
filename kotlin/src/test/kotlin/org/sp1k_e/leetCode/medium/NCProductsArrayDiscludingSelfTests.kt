@@ -3,7 +3,7 @@ package org.sp1k_e.leetCode.medium
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
-class ProductsArrayDiscludingSelfTests {
+class NCProductsArrayDiscludingSelfTests {
     @Test
     fun test() {
         val testCases = arrayOf(
@@ -16,7 +16,7 @@ class ProductsArrayDiscludingSelfTests {
                 input = intArrayOf(-1, 0, 1, 2, 3)
             ),
         )
-        val testObject = ProductsArrayDiscludingSelf()
+        val testObject = NCProductsArrayDiscludingSelf()
         for (testCase in testCases) {
             val result = testObject.productExceptSelf(testCase.input)
             assertContentEquals(testCase.expected, result)

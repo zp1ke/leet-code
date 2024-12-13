@@ -3,7 +3,7 @@ package org.sp1k_e.leetCode.medium
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ValidSudokuTests {
+class NCValidSudokuTests {
     @Test
     fun test() {
         val testCases = arrayOf(
@@ -36,7 +36,7 @@ class ValidSudokuTests {
                 ),
             )
         )
-        val testObject = ValidSudoku()
+        val testObject = NCValidSudoku()
         for (testCase in testCases) {
             val result = testObject.isValidSudoku(testCase.input)
             assertEquals(testCase.expected, result)

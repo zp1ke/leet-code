@@ -1,7 +1,7 @@
 package org.sp1k_e.leetCode.medium
 
 // https://neetcode.io/problems/products-of-array-discluding-self
-class ProductsArrayDiscludingSelf {
+class NCProductsArrayDiscludingSelf {
     fun productExceptSelf(nums: IntArray): IntArray {
         val prefix = IntArray(nums.size)
         var prev = 1

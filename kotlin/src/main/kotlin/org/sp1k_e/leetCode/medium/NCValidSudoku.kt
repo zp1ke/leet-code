@@ -1,7 +1,7 @@
 package org.sp1k_e.leetCode.medium
 
 // https://neetcode.io/problems/valid-sudoku
-class ValidSudoku {
+class NCValidSudoku {
     fun isValidSudoku(board: Array<CharArray>): Boolean {
         val sudokuSquareSize = 3
         val sudokuSize = sudokuSquareSize * sudokuSquareSize
