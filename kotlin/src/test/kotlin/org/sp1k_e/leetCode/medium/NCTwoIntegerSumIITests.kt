@@ -12,6 +12,21 @@ class NCTwoIntegerSumIITests {
                 input = intArrayOf(1, 2, 3, 4),
                 target = 3
             ),
+            NCTwoIntegerSumIITestCase(
+                intArrayOf(1, 2),
+                input = intArrayOf(2, 7, 11, 15),
+                target = 9
+            ),
+            NCTwoIntegerSumIITestCase(
+                intArrayOf(1, 3),
+                input = intArrayOf(2, 3, 4),
+                target = 6
+            ),
+            NCTwoIntegerSumIITestCase(
+                intArrayOf(1, 2),
+                input = intArrayOf(-1, 0),
+                target = -1
+            ),
         )
         val testObject = NCTwoIntegerSumII()
         for (testCase in testCases) {
