@@ -3,7 +3,7 @@ package org.sp1k_e.leetCode.medium
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
-class NCTwoIntegerSumIITests {
+class TwoIntegerSumIITests {
     @Test
     fun test() {
         val testCases = arrayOf(
@@ -28,7 +28,7 @@ class NCTwoIntegerSumIITests {
                 target = -1
             ),
         )
-        val testObject = NCTwoIntegerSumII()
+        val testObject = TwoIntegerSumII()
         for (testCase in testCases) {
             val result = testObject.twoSum(testCase.input, testCase.target)
             assertContentEquals(testCase.expected, result)

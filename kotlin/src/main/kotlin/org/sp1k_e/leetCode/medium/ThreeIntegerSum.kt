@@ -1,7 +1,7 @@
 package org.sp1k_e.leetCode.medium
 
-// https://neetcode.io/problems/three-integer-sum
-class NCThreeIntegerSum {
+// https://leetcode.com/problems/3sum/description/
+class ThreeIntegerSum {
     fun threeSum(nums: IntArray): List<List<Int>> {
         val numbers = nums.sorted()
         val result = mutableSetOf<List<Int>>()

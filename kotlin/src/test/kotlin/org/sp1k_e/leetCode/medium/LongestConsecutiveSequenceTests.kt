@@ -3,7 +3,7 @@ package org.sp1k_e.leetCode.medium
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class NCLongestConsecutiveSequenceTests {
+class LongestConsecutiveSequenceTests {
     @Test
     fun test() {
         val testCases = arrayOf(
@@ -16,7 +16,7 @@ class NCLongestConsecutiveSequenceTests {
                 input = intArrayOf(0, 3, 2, 5, 4, 6, 1, 1)
             ),
         )
-        val testObject = NCLongestConsecutiveSequence()
+        val testObject = LongestConsecutiveSequence()
         for (testCase in testCases) {
             val result = testObject.longestConsecutive(testCase.input)
             assertEquals(testCase.expected, result)

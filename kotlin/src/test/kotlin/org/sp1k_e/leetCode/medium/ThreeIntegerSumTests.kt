@@ -3,7 +3,7 @@ package org.sp1k_e.leetCode.medium
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class NCThreeIntegerSumTests {
+class ThreeIntegerSumTests {
     @Test
     fun test() {
         val testCases = arrayOf(
@@ -28,7 +28,7 @@ class NCThreeIntegerSumTests {
                 expected = listOf(listOf(-2, 0, 2), listOf(-2, 1, 1))
             ),
         )
-        val testObject = NCThreeIntegerSum()
+        val testObject = ThreeIntegerSum()
         for (testCase in testCases) {
             val result = testObject.threeSum(testCase.input)
             assertEquals(testCase.expected.size, result.size)

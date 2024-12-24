@@ -1,7 +1,7 @@
 package org.sp1k_e.leetCode.medium
 
-// https://neetcode.io/problems/longest-consecutive-sequence
-class NCLongestConsecutiveSequence {
+// https://leetcode.com/problems/longest-consecutive-sequence/description/
+class LongestConsecutiveSequence {
     fun longestConsecutive(nums: IntArray): Int {
         val numSet = nums.toSet()
         val sequenceStarts = mutableSetOf<Int>()
